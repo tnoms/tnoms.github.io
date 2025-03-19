@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<!--
+        Built with Trey Norman's DIY static site generator
+        Base site is a derivative of Phantom by HTML5 UP with added features (html5up.net | @ajlkn)
+        You may copy, adapt, and use this work for any purpose, even commercial, but only if derivative works are distributed under the same license (CC BY-SA 4.0).
+    -->
+<html>
+  <head>
+    <title>ExifTool Multi-Core Support | Trey Norman</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=no"
+    />
+    <link rel="stylesheet" href="../assets/css/main.css" />
+    <link rel="icon" type="image/x-icon" href="../images/favicon.ico" />
+    <noscript><link rel="stylesheet" href="../assets/css/noscript.css"  /></noscript>
+  </head>
+  <body class="is-preload">
+    <!-- Wrapper -->
+    <div id="wrapper">
+      <!-- Header -->
+      <header id="header">
+        <div class="inner">
+          <!-- Logo -->
+          <a href="../index.html" class="logo">
+            <span class="symbol"><img src="../images/logo.svg" alt="" /></span
+            ><span class="title">Trey Norman</span>
+          </a>
+
+          <!-- Nav -->
+          <nav>
+            <ul>
+              <li><a href="#menu">Menu</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+
+      <!-- Menu -->
+      <nav id="menu">
+        <h2>Menu</h2>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../projects/index.html">Projects</a></li>
+          <li><a href="../about.html">About</a></li>
+        </ul>
+      </nav>
+      <!-- Main -->
+      <div id="main">
+        <div class="inner">
+<h1>ExifTool Multi-Core Support</h1>
+
+<h4>May 4, 2024</h4>
+
+<hr />
+
+<h2>Overview</h2>
+
+<p><a href="https://exiftool.org/">ExifTool</a> does not include multi-core support out of the box. This is unfortunate, because modern computers can run many processing threads at once. The workaround, as recommended by the ExifTool creator Phil Harvey, is to simply run multiple instances of ExifTool in parallel. If we run these instances in the background, we can achieve rudimentary multi-core support for ExifTool batch operations.</p>
+
+<p>An automated example and walkthrough are provided. ExifTool's GPS location data tagging operation is used, because it's slow and benefits significantly from parallelization.</p>
+
+<hr />
+
+<h2>Script: Parallelized GPS Tagging (Linux &amp; MacOS)</h2>
+
+<p>This script below tags a large number photos with GPS location data. Photos are correlated with location tracking from a smartphone based on the time they were taken. They're then tagged with the smartphone GPS location corresponding to that point in time. This allows photos taken on a nice camera without GPS to reference to location at which they were taken and be displayed on a photo map.</p>
+
+<p>Multiple instances of ExifTool are launched at once to tag thousands of photos in parallel. Each process tags photos inside a different directory, recursively. Tagging photos with GPS metadata is achieved using a GPS track log (e.g. location data exported from <a href="https://takeout.google.com/takeout/custom/local_actions,location_history,maps,mymaps">Google Takeout</a>) and the <a href="https://www.exiftool.org/geotag.html">ExifTool geotagging feature</a>.</p>
+
+<pre><code>#!/bin/bash
+
+gps_log="/path-to-gps-log/Records.json"
+
+# Find all directories in the current directory
+# Excluding root directory and sub-directories
+find . -maxdepth 1 -mindepth 1 -type d -print0 |
+
+    # Loop across all directories with support for special characters
+    while IFS= read -r -d '' i; do
+
+        # Run ExifTool GPS tagging command in the background
+        nohup exiftool -if 'not $GPSLongitude' -if '$OffsetTime' -iptc:all="" '-geotime&lt;${DateTimeOriginal}${OffsetTime}' -geotag "${gps_log}" -api GeoMaxIntSecs=0 -api GeoMaxExtSecs=10800 -api LargeFileSupport=1 -overwrite_original -m -r -ext ARW -ext CR2 -ext JPG -ext JPEG -ext TIF ${i} &amp;
+    done
+</code></pre>
+
+<p>Here's a breakdown of the lengthy ExifTool command used above: </p>
+
+<ul>
+<li>Excludes photos with existing GPSLongitude metadata: <code>-if 'not $GPSLongitude'</code></li>
+<li>Ensures UTC timezone offset metadata is included in the photo: <code>-if '$OffsetTime'</code></li>
+<li>GPS timestamps will reference DateTimeOriginal metadata combined with the UTC timezone offset: <code>'-geotime&lt;${DateTimeOriginal}${OffsetTime}'</code></li>
+<li>GPS coordinates found within a 3-hour range of when the photo was taken are applied: <code>-api GeoMaxExtSecs=10800</code></li>
+<li>GPS coordinates are not interpolated using the closest two (no guesses): <code>-api GeoMaxIntSecs=0</code></li>
+<li>A GPS log file location is specified: <code>-geotag "Location History/Records_2018.json"</code></li>
+<li>Large file support is enabled for files &gt;4GB</li>
+<li>IPTC metadata is destroyed, because it can interfere with tagging</li>
+<li>Original files are overwritten</li>
+<li>Minor errors are ignored</li>
+<li>Command runs recursively into all subdirectories</li>
+<li>File extensions targeted are ARW, CR2, JPG, JPEG, and TIF</li>
+<li><code>nohup</code> ... <code>&amp;</code> is applied to run the each process in the background</li>
+</ul>
+
+<hr />
+
+<p><em>License: <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0 Deed</a> - You may copy, adapt, and use this work for any purpose, even commercial, but only if derivative works are distributed under the same license.</em></p>
+
+<p><em>Category: Software</em></p>
+
+        </div>
+    </div>
+      <!-- Footer -->
+      <footer id="footer">
+        <div class="inner">
+          <section>
+            <h2>Connect</h2>
+            <ul class="icons">
+              <li>
+                <a
+                  href="https://www.linkedin.com/in/treynorman"
+                  class="icon brands style2 fa-linkedin"
+                  ><span class="label">LinkedIn</span></a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://www.instagram.com/"
+                  class="icon brands style2 fa-instagram"
+                  ><span class="label">Instagram</span></a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://www.facebook.com/tnoms/"
+                  class="icon brands style2 fa-facebook-f"
+                  ><span class="label">Facebook</span></a
+                >
+              </li>
+            </ul>
+          </section>
+          <ul class="copyright">
+            <li>
+              <a
+                rel="license"
+                href="https://creativecommons.org/licenses/by-sa/4.0/"
+                >Creative Commons Licensed</a
+              >
+            </li>
+            <li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+          </ul>
+        </div>
+      </footer>
+    </div>
+
+    <!-- Scripts -->
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/js/jquery.poptrox.min.js"></script>
+    <script src="../assets/js/browser.min.js"></script>
+    <script src="../assets/js/breakpoints.min.js"></script>
+    <script src="../assets/js/util.js"></script>
+    <script src="../assets/js/main.js"></script>
+  </body>
+</html>
+
