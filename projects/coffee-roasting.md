@@ -13,11 +13,11 @@ Home coffee roasting from basic heating to temperature rate control, Maillard re
 
 ## Background
 
-I’ve been a coffee lover as long as I can remember. Over the years, I've honed my brewing process, focusing on grind consistency, water temperature, mineral composition, and CO2 dissipation (the "bloom"), often with mixed results. I came to learn that no matter how much I perfect my brew, it's the beans themselves that truly define the cup. At its core, brewing coffee is simply dissolving flavor compounds in water – extracting the good, avoiding the bad. The key to brewing great coffee is sourcing and roasting beans such that they don't have any bad flavors to begin with.
+I’ve been a coffee lover as long as I can remember. Over the years, I’ve honed my brewing process, focusing on grind consistency, water temperature, mineral composition, and CO₂ dissipation (the "bloom"), often with mixed results. I came to learn that no matter how much I refine my brew, it’s the beans themselves that truly define the cup. At its core, brewing coffee is simply dissolving flavor compounds in water – extracting the good, avoiding the bad. The key to brewing great coffee is sourcing and roasting beans such that they don't have any bad flavors to begin with. 
 
-That may sound extreme, but trust me: great coffee can still taste great even if you brew it by boiling lake water and forgetting it for ten minutes while camping. Not that I would know.
+That may sound extreme, but trust me: great coffee can still taste great even if you brew it by boiling lake water and forgetting it for ten minutes while camping. (Not that I would know.)  
 
-Like any agricultural product, the quality of the coffee crop is vital. The plant varietal, climate, altitude it's grown at, and the processing method all play major roles in defining the base quality. It's up to the coffee roaster to make the coffee shine, and doing so is much easier said than done.
+Like any agricultural product, the quality of the coffee crop is vital. The plant varietal, climate, altitude at which it’s grown, and the processing method all play major roles in defining the base quality. It’s up to the coffee roaster to make the coffee shine, and doing so is much easier said than done.
 
 ## Coffee Roasting Journey
 
