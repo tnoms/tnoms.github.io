@@ -3,7 +3,7 @@
 
 ## Overview
 
-DIY solution to control room lights with brainwave activity, voice commands, and smartphone. Home automation features include smartphone alarm clock integration; which optimizes wake-up time to match sleep cycles, gently turns on the lights, speaks the morning weather, and plays music on the stereo.
+DIY solution to control room lights with brainwave activity, voice commands, and smartphone. Includes custom integration with smartphone alarm clock to sync wake-up time with sleep cycles, gently turn on the lights, speak the morning weather, and play music on the stereo.
 
 **Time Invested**: 4 days  
 **Cost (Outlet Remote)**: $25  

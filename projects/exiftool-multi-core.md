@@ -1,17 +1,17 @@
-# ExifTool Multi-Core Support
+# Parallelized Photo Tagging with Google Location Data
 *May 4, 2024*
 
 ## Overview
 
-[ExifTool](https://exiftool.org/) does not include multi-core support out of the box. This is unfortunate, because modern computers can run many processing threads at once. The workaround, as recommended by the ExifTool creator Phil Harvey, is to simply run multiple instances of ExifTool in parallel. If we run these instances in the background, we can achieve rudimentary multi-core support for ExifTool batch operations.
+For tagging large numbers of photos, [ExifTool](https://exiftool.org/) does not include multi-core support out of the box. The workaround, recommended by its creator Phil Harvey, is to run multiple instances of ExifTool in parallel. It's not the most elegant solution, but if we run these instances automatically in the background, we can achieve rudimentary multi-core support for ExifTool.
 
-An automated example and walkthrough are provided. ExifTool's GPS location data tagging operation is used, because it's slow and benefits significantly from parallelization.
+An example script is provided below. ExifTool's GPS data tagging operation is used, because it's slow and benefits greatly from parallelization.
 
 ## Script: Parallelized GPS Tagging (Linux & MacOS)
 
-This script below tags a large number photos with GPS location data. Photos are correlated with location tracking from a smartphone based on the time they were taken. They're then tagged with the smartphone GPS location corresponding to that point in time. This allows photos taken on a nice camera without GPS to reference to location at which they were taken and be displayed on a photo map.
+This simple script uses a log of GPS locations to recursively tag all photos in a given directory with GPS data.
 
-Multiple instances of ExifTool are launched at once to tag thousands of photos in parallel. Each process tags photos inside a different directory, recursively. Tagging photos with GPS metadata is achieved using a GPS track log (e.g. location data exported from [Google Takeout](https://takeout.google.com/takeout/custom/local_actions,location_history,maps,mymaps)) and the [ExifTool geotagging feature](https://www.exiftool.org/geotag.html).
+Photos are correlated with smartphone location data based on the time they were taken. They're then tagged with the corresponding GPS location logged by the smartphone. This allows photos taken on an older DSLR camera to be displayed on a photo map. Multiple instances of ExifTool are launched at once to tag thousands of photos in parallel. Each ExifTool instance tags photos inside a child directory, recursively. Tagging photos with GPS metadata is achieved using a GPS track log (e.g. location tracking exported from [Google Takeout](https://takeout.google.com/takeout/custom/local_actions,location_history,maps,mymaps)) and the [ExifTool geotagging feature](https://www.exiftool.org/geotag.html).
 
 ```
 #!/bin/bash
@@ -48,4 +48,4 @@ Here's a breakdown of the lengthy ExifTool command used above:
 ---
 *License: [CC BY-SA 4.0 Deed](https://creativecommons.org/licenses/by-sa/4.0/) - You may copy, adapt, and use this work for any purpose, even commercial, but only if derivative works are distributed under the same license.*
 
-*Category: Software*
+*Category: Notes, Software*

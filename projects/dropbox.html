@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!--
-        Built with Trey Norman's DIY static site generator
+        Built with my janky, opinoinated DIY static site generator.
         Base site is a derivative of Phantom by HTML5 UP with added features (html5up.net | @ajlkn)
         You may copy, adapt, and use this work for any purpose, even commercial, but only if derivative works are distributed under the same license (CC BY-SA 4.0).
     -->
@@ -59,9 +59,9 @@
 
 <p>A private <a href="https://www.dropbox.com/">Dropbox</a> alternative with no subscription fees or reliance on the cloud. It runs an internet-connected embedded Linux server and offers as much storage as you plug into it. Turn your old hard drives into personal cloud storage!</p>
 
-<p><strong>Time Invested</strong>: 2 days<br />
-<strong>Cost (BeagleBone Black)</strong>: Free from trade show ($55 new)<br />
-<strong>Cost (Hard Drive)</strong>: Collecting dust ($120 new)<br />
+<p><strong>Time Invested</strong>: 2 days <br />
+<strong>Cost (BeagleBone Black)</strong>: Free from trade show ($55 new) <br />
+<strong>Cost (Hard Drive)</strong>: Collecting dust ($120 new) <br />
 <strong>Features</strong>:  </p>
 
 <ul>
@@ -104,8 +104,7 @@
 
 <p>First, find the microSD card block device path on your computer using <code>lsblk</code>. You should be able to identify your card by its size. Storage devices are enumerated by disk with each partition listed under the disk as branch. We're interested in the disk itself, not the partitions. My 4 GB microSD card was enumerated under the name "sdd" corresponding to the path "/dev/sdd".</p>
 
-<pre><code>lsblk
-NAME   MAJ:MIN RM   SIZE RO TYPE MOUNTPOINT
+<pre><code>NAME   MAJ:MIN RM   SIZE RO TYPE MOUNTPOINT
 loop0    7:0    0   1.1G  1 loop /lib/live/mount/rootfs/filesystem.squashfs
 sda      8:0    0 233.8G  0 disk 
 ├─sda1   8:1    0   200M  0 part 
@@ -174,9 +173,7 @@ UUID=791768c2-9b12-4057-a378-894505f38879  /media/Storage  auto  rw,user,auto  0
 
 <p>Reboot your BeagleBone Black with the <code>reboot</code> command. Once it's back up and running, SSH into it and check that your drive is mounted with the <code>ls</code> command as shown below.</p>
 
-<pre><code>reboot
-
-ssh root@beaglebone.local
+<pre><code>ssh root@beaglebone.local
 root@beaglebone.local's password:
 
 ls /media/Storage/

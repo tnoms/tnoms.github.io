@@ -24,10 +24,8 @@ That sounds like an ad, but really it's a call to action for someone to build a 
 This tutorial targets MediaMonkey 3, because it has the largest number of community extensions available for enhanced functionality. [Download the final version of MediaMonkey 3 from the MediaMonkey website.](https://www.mediamonkey.com/support/knowledge-base/mediamonkey-general/download-mediamonkey/)
 
 ## Configure Winetricks
-Use winetricks to install supporting Windows components and libraries:
-```
-winetricks
-```
+
+Run `winetricks` to install supporting Windows components and libraries.
 
 - Choose **Select the default wine prefix** 
 - Select **Install a Windows DLL or component** and add these components / libraries
@@ -131,4 +129,4 @@ A custom icon can also be used by referencing the absolute path of a SVG or PNG 
 Log out and log back in for these changes to take effect.
 
 ---
-*Category: Notes*
+*Category: Notes, Software*

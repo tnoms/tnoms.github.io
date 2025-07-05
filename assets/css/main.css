@@ -3090,7 +3090,7 @@ input, select, textarea {
 
 		#header nav {
 			position: fixed;
-			right: 2em;
+			left: 2em;
 			top: 2em;
 			z-index: 10000;
 		}

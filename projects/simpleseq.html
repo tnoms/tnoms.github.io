@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!--
-        Built with Trey Norman's DIY static site generator
+        Built with my janky, opinoinated DIY static site generator.
         Base site is a derivative of Phantom by HTML5 UP with added features (html5up.net | @ajlkn)
         You may copy, adapt, and use this work for any purpose, even commercial, but only if derivative works are distributed under the same license (CC BY-SA 4.0).
     -->
@@ -59,8 +59,8 @@
 
 <p>SimpleSeq is a MIDI sequencer designed to be used as an instrument or drum machine. It can trigger notes and sounds on a synthesizer, VST plug-in, or any sound generating device that supports the MIDI protocol.</p>
 
-<p><strong>Time Invested</strong>: 3 weeks<br />
-<strong>Cost</strong>: $15<br />
+<p><strong>Time Invested</strong>: 3 weeks <br />
+<strong>Cost</strong>: $15 <br />
 <strong>Features</strong>:  </p>
 
 <ul>
@@ -87,7 +87,7 @@
 <p>For the circuit, I...</p>
 
 <ul>
-<li>Added a second button for navigation<br />
+<li>Added a second button for navigation <br />
 <em>- [left]-[enter]-[right] instead of [select]-[enter]</em></li>
 <li>Embedded the microcontroller and power supply into the circuit</li>
 <li>Used brighter LEDs with 220 Ohm current-limiting resistors</li>
@@ -96,18 +96,18 @@
 <p>For the firmware, I...</p>
 
 <ul>
-<li>Rewrote the "loop" section of the code, so the device is constantly checking for user input (every 10ms), not just when notes are played<br />
-<em>- the original device would "freeze" in between every note, which became a major problem at slow tempos</em><br />
+<li>Rewrote the "loop" section of the code, so the device is constantly checking for user input (every 10ms), not just when notes are played <br />
+<em>- the original device would "freeze" in between every note, which became a major problem at slow tempos</em> <br />
 <em>- from what I now understand, what I did was essentially event-driven programming</em></li>
 <li>Added the ability to navigate forward and backward through steps and menus</li>
 <li>Added the ability to play two notes simultaneously (aka. two-note polyphony)</li>
 <li>Added the ability to store presets in EEPROM (three total)</li>
 <li>Added the ability to control eight <a href="https://www.midi.org/specifications/item/table-3-control-change-messages-data-bytes-2">MIDI CC functions</a> (eg. filter cutoff frequency, resonance, portamento, etc.)</li>
-<li>Added the ability to mute all notes<br />
+<li>Added the ability to mute all notes <br />
 <em>- helpful when assigning MIDI CC functions in Ableton, etc.</em></li>
 <li>Changed the way tempo is set (using BPM, rather than milliseconds of delay), and constrained the range from 60 to 300 BPM</li>
-<li>Changed the way new notes start when added to a sequence<br />
-<em>- repeats the previous note, instead of always playing a C</em><br />
+<li>Changed the way new notes start when added to a sequence <br />
+<em>- repeats the previous note, instead of always playing a C</em> <br />
 <em>- this keeps the user from hearing a wrong note when C is not in-key</em></li>
 <li>Simplified parts of the original code</li>
 </ul>

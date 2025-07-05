@@ -3,7 +3,7 @@
 
 ## Overview
 
-This scraper regularly searches for flights across a given time range and trip length, then sends notification emails for flight prices below a given threshold. With every search, it forces a data refresh of flight prices before it scrapes them, ensuring that prices aren't stale. Multiple origin and destination airports are supported. Deals are also saved to a CSV file.
+This scraper regularly searches for flights across a given time range and trip length. Notification emails are sent for flight prices below a given threshold. With every search, it forces a data refresh of flight prices before scraping them, ensuring that prices aren't stale. Multiple origin and destination airports are supported. Deals are saved to a CSV file.
 
 ## Video
 

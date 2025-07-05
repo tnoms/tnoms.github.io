@@ -1,0 +1,81 @@
+      <!-- Main -->
+      <div id="main">
+        <div class="inner">
+          <h1>Projects</h1>
+
+          <!-- Buttons -->
+          <section>
+            <ul class="actions fit">
+              <li>
+                <a
+                  href="#all"
+                  class="button fit"
+                  onclick="filterProjects('All')"
+                  >All</a
+                >
+              </li>
+            </ul>
+            <ul class="actions fit">
+              <li>
+                <a
+                  href="#software"
+                  class="button primary fit"
+                  onclick="filterProjects('Software')"
+                  >Software</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#hardware"
+                  class="button primary fit"
+                  onclick="filterProjects('Hardware')"
+                  >Hardware</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#other"
+                  class="button primary fit"
+                  onclick="filterProjects('Other')"
+                  >Other</a
+                >
+              </li>
+            </ul>
+            <ul class="actions fit">
+              <li>
+                <a
+                  href="#tools"
+                  class="button fit"
+                  onclick="filterProjects('Tools')"
+                  >Tools</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#notes"
+                  class="button fit"
+                  onclick="filterProjects('Notes')"
+                  >Notes</a
+                >
+              </li>
+            </ul>
+          </section>
+          <!-- Table -->
+          <section>
+            <div class="table-wrapper">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Category</th>
+                    <th>Date</th>
+                  </tr>
+                </thead>
+                <tbody>
+{content}
+                </tbody>
+            </table>
+          </div>
+        </section>
+      </div>
+    </div>
