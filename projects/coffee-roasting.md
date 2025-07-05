@@ -1,4 +1,4 @@
-# Coffee Roasting Deep Dive
+# Coffee Roasting
 *February 15, 2021*
 
 ## Overview
@@ -7,7 +7,9 @@ Home coffee roasting from basic heating to temperature rate control, Maillard re
 
 ## Video
 
-[Video]()
+[Video](https://www.youtube.com/embed/9BxUGKazajo)
+
+[Video](https://www.youtube.com/embed/0QRqdFm72Z0)
 
 ## Background
 
@@ -23,7 +25,7 @@ I'm one of the weirdos who enjoyed the downtime of the pandemic. With work trave
 
 The recall paid out $80, and I used that cash to upgrade to a [Behmor 1600AB](https://behmor.com/) – a drum roaster inside a toaster oven. The seller, who was the R&D head at a Chicago commercial bakery, even threw in a book on the science of roasting. I was all in.
 
-But while the Behmor was a step up, it still had limitations. Those limitations became especially clear after I did a deep dive on the science. I wanted better temperature control, more heat capacity, and something I could hack.
+But while the Behmor was a step up, it still had limitations. Those limitations became especially clear after I did a deep dive on the science. I made some minor modifications to improve it, but ultimately the Behmor didn't cut it. I needed more heat capacity, better temperature control, and something I could hack more easily.
 
 That led me to the [Fresh Roast SR800](https://www.sweetmarias.com/fresh-roast-sr800.html). It offered faster heat transfer, tighter temperature control, and most importantly, it was easily hackable. I drilled a hole through the top of it soon after it arrived and added a thermocouple to measure the bean temperature. That single change allowed me to collect real data and refine my roasting process. Oddly enough, that's really the only hardware difference between a $280 roaster and a $3,000 one: a $10 thermometer. 
 
@@ -33,7 +35,7 @@ The other difference between a $280 roaster and a $3,000 one is automatic temper
 
 You know who can copy and paste that code? Me.
 
-Because the other thing the SR800 offers, which those of you nerdy enough might also notice, is a rotary encoder knob to control it. That means that I can hack and control the roaster digitally by soldering on leads from a microcontroller to emulate the output of the knob. Using feedback from the thermocouple, I can write code to precisely manage the charge phase, Maillard phase, sugar caramelization phase, roast development time, and ROR. And importantly, I can do this without ever touching the high-voltage circuits – achieving precision control without risking a house fire.
+Because the other thing the SR800 offers is a rotary encoder knob to control it. That means that I can hack and control the roaster digitally using a microcontroller to emulate the output of the knob. With feedback from the thermocouple, I can write code to tightly control the temperature and fine-tune the charge phase, Maillard phase, sugar caramelization phase, roast development time, and ROR. And importantly, I can do this without ever touching the high-voltage circuits – achieving precision control without risking a house fire.
 
 ## Gallery
 

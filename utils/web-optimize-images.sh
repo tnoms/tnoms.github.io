@@ -6,5 +6,5 @@ convert square.jpg -strip -interpolate catrom -resize 500x500 -unsharp 0x0.3 -qu
 # Compress gallery*.jpg files to 70% quality and strip metadata
 for file in gallery*.jpg; do
   # Apply the convert command to each file
-  convert "$file" -strip -quality 70% "$file"
+  convert "$file" -strip -quality 70% -resize x1920 "$file"
 done

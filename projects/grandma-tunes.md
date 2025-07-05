@@ -16,7 +16,7 @@ Internet connected, remotely controlled antique style radio to assist the elderl
 
 ## Video
 
- [Video](https://www.youtube.com/embed/0CONtawlBcc)
+[Video](https://www.youtube.com/embed/0CONtawlBcc)
 
 ## Backstory
 

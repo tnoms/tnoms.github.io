@@ -6,7 +6,7 @@
     -->
 <html>
   <head>
-    <title>Coffee Roasting Deep Dive | Trey Norman</title>
+    <title>Coffee Roasting | Trey Norman</title>
     <meta charset="utf-8" />
     <meta
       name="viewport"
@@ -49,7 +49,7 @@
       <!-- Main -->
       <div id="main">
         <div class="inner">
-<h1>Coffee Roasting Deep Dive</h1>
+<h1>Coffee Roasting</h1>
 
 <h4>February 15, 2021</h4>
 
@@ -63,7 +63,9 @@
 
 <h2>Video</h2>
 
-<p><a href="">Video</a></p>
+<article class="video-container"><iframe class="video" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" src="https://www.youtube.com/embed/9BxUGKazajo"></iframe></article>
+
+<article class="video-container"><iframe class="video" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" src="https://www.youtube.com/embed/0QRqdFm72Z0"></iframe></article>
 
 <hr />
 
@@ -83,7 +85,7 @@
 
 <p>The recall paid out $80, and I used that cash to upgrade to a <a href="https://behmor.com/">Behmor 1600AB</a> – a drum roaster inside a toaster oven. The seller, who was the R&amp;D head at a Chicago commercial bakery, even threw in a book on the science of roasting. I was all in.</p>
 
-<p>But while the Behmor was a step up, it still had limitations. Those limitations became especially clear after I did a deep dive on the science. I wanted better temperature control, more heat capacity, and something I could hack.</p>
+<p>But while the Behmor was a step up, it still had limitations. Those limitations became especially clear after I did a deep dive on the science. I made some minor modifications to improve it, but ultimately the Behmor didn't cut it. I needed more heat capacity, better temperature control, and something I could hack more easily.</p>
 
 <p>That led me to the <a href="https://www.sweetmarias.com/fresh-roast-sr800.html">Fresh Roast SR800</a>. It offered faster heat transfer, tighter temperature control, and most importantly, it was easily hackable. I drilled a hole through the top of it soon after it arrived and added a thermocouple to measure the bean temperature. That single change allowed me to collect real data and refine my roasting process. Oddly enough, that's really the only hardware difference between a $280 roaster and a $3,000 one: a $10 thermometer. </p>
 
@@ -95,28 +97,26 @@
 
 <p>You know who can copy and paste that code? Me.</p>
 
-<p>Because the other thing the SR800 offers, which those of you nerdy enough might also notice, is a rotary encoder knob to control it. That means that I can hack and control the roaster digitally by soldering on leads from a microcontroller to emulate the output of the knob. Using feedback from the thermocouple, I can write code to precisely manage the charge phase, Maillard phase, sugar caramelization phase, roast development time, and ROR. And importantly, I can do this without ever touching the high-voltage circuits – achieving precision control without risking a house fire.</p>
+<p>Because the other thing the SR800 offers is a rotary encoder knob to control it. That means that I can hack and control the roaster digitally using a microcontroller to emulate the output of the knob. With feedback from the thermocouple, I can write code to tightly control the temperature and fine-tune the charge phase, Maillard phase, sugar caramelization phase, roast development time, and ROR. And importantly, I can do this without ever touching the high-voltage circuits – achieving precision control without risking a house fire.</p>
 
 <hr />
 
 <h2>Gallery</h2>
 
 <article id="gallery"
-    <span class="slide"><a href="../projects/coffee-roasting/2021-02-11 09h28m14s [Phone] [Edited].jpg" class="gallery-link"><img src="../projects/coffee-roasting/2021-02-11 09h28m14s [Phone] [Edited].jpg" alt="Caption." /></a></span>
-    <span class="slide hidden"><a href="../projects/coffee-roasting/2021-02-11 19h43m45s [Phone] [Edited].jpg" class="gallery-link"><img src="../projects/coffee-roasting/2021-02-11 19h43m45s [Phone] [Edited].jpg" alt="Caption." /></a></span>
-    <span class="slide hidden"><a href="../projects/coffee-roasting/2021-12-30 20h17m44s [Phone].jpg" class="gallery-link"><img src="../projects/coffee-roasting/2021-12-30 20h17m44s [Phone].jpg" alt="Caption." /></a></span>
-    <span class="slide hidden"><a href="../projects/coffee-roasting/2024-07-25 16h09m52s [Phone].jpg" class="gallery-link"><img src="../projects/coffee-roasting/2024-07-25 16h09m52s [Phone].jpg" alt="Caption." /></a></span>
-    <span class="slide hidden"><a href="../projects/coffee-roasting/2024-07-25 16h11m06s [Phone].jpg" class="gallery-link"><img src="../projects/coffee-roasting/2024-07-25 16h11m06s [Phone].jpg" alt="Caption." /></a></span>
-    <span class="slide hidden"><a href="../projects/coffee-roasting/2024-07-25 16h14m49s [Phone].jpg" class="gallery-link"><img src="../projects/coffee-roasting/2024-07-25 16h14m49s [Phone].jpg" alt="Caption." /></a></span>
-    <span class="slide hidden"><a href="../projects/coffee-roasting/2024-07-27 14h21m09s [Phone].jpg" class="gallery-link"><img src="../projects/coffee-roasting/2024-07-27 14h21m09s [Phone].jpg" alt="Caption." /></a></span>
-    <span class="slide hidden"><a href="../projects/coffee-roasting/2024-07-27 14h34m12s [Phone].jpg" class="gallery-link"><img src="../projects/coffee-roasting/2024-07-27 14h34m12s [Phone].jpg" alt="Caption." /></a></span>
-    <span class="slide hidden"><a href="../projects/coffee-roasting/2024-07-27 14h34m58s [Phone].jpg" class="gallery-link"><img src="../projects/coffee-roasting/2024-07-27 14h34m58s [Phone].jpg" alt="Caption." /></a></span>
-    <span class="slide hidden"><a href="../projects/coffee-roasting/2024-07-27 14h39m37s [Phone].jpg" class="gallery-link"><img src="../projects/coffee-roasting/2024-07-27 14h39m37s [Phone].jpg" alt="Caption." /></a></span>
-    <span class="slide hidden"><a href="../projects/coffee-roasting/2024-07-27 14h50m09s [Phone].jpg" class="gallery-link"><img src="../projects/coffee-roasting/2024-07-27 14h50m09s [Phone].jpg" alt="Caption." /></a></span>
-    <span class="slide hidden"><a href="../projects/coffee-roasting/2024-07-27 16h05m50s [Phone].jpg" class="gallery-link"><img src="../projects/coffee-roasting/2024-07-27 16h05m50s [Phone].jpg" alt="Caption." /></a></span>
-    <span class="slide hidden"><a href="../projects/coffee-roasting/2024-07-27 16h18m43s [Phone].jpg" class="gallery-link"><img src="../projects/coffee-roasting/2024-07-27 16h18m43s [Phone].jpg" alt="Caption." /></a></span>
-    <span class="slide hidden"><a href="../projects/coffee-roasting/2024-07-27 19h51m51s [Phone].jpg" class="gallery-link"><img src="../projects/coffee-roasting/2024-07-27 19h51m51s [Phone].jpg" alt="Caption." /></a></span>
-    <span class="slide hidden"><a href="../projects/coffee-roasting/2024-07-27 19h55m40s [Phone].jpg" class="gallery-link"><img src="../projects/coffee-roasting/2024-07-27 19h55m40s [Phone].jpg" alt="Caption." /></a></span>
+    <span class="slide"><a href="../projects/coffee-roasting/gallery01.jpg" class="gallery-link"><img src="../projects/coffee-roasting/gallery01.jpg" alt="Caption." /></a></span>
+    <span class="slide hidden"><a href="../projects/coffee-roasting/gallery02.jpg" class="gallery-link"><img src="../projects/coffee-roasting/gallery02.jpg" alt="Caption." /></a></span>
+    <span class="slide hidden"><a href="../projects/coffee-roasting/gallery03.jpg" class="gallery-link"><img src="../projects/coffee-roasting/gallery03.jpg" alt="Caption." /></a></span>
+    <span class="slide hidden"><a href="../projects/coffee-roasting/gallery04.jpg" class="gallery-link"><img src="../projects/coffee-roasting/gallery04.jpg" alt="Caption." /></a></span>
+    <span class="slide hidden"><a href="../projects/coffee-roasting/gallery05.jpg" class="gallery-link"><img src="../projects/coffee-roasting/gallery05.jpg" alt="Caption." /></a></span>
+    <span class="slide hidden"><a href="../projects/coffee-roasting/gallery06.jpg" class="gallery-link"><img src="../projects/coffee-roasting/gallery06.jpg" alt="Caption." /></a></span>
+    <span class="slide hidden"><a href="../projects/coffee-roasting/gallery07.jpg" class="gallery-link"><img src="../projects/coffee-roasting/gallery07.jpg" alt="Caption." /></a></span>
+    <span class="slide hidden"><a href="../projects/coffee-roasting/gallery08.jpg" class="gallery-link"><img src="../projects/coffee-roasting/gallery08.jpg" alt="Caption." /></a></span>
+    <span class="slide hidden"><a href="../projects/coffee-roasting/gallery09.jpg" class="gallery-link"><img src="../projects/coffee-roasting/gallery09.jpg" alt="Caption." /></a></span>
+    <span class="slide hidden"><a href="../projects/coffee-roasting/gallery10.jpg" class="gallery-link"><img src="../projects/coffee-roasting/gallery10.jpg" alt="Caption." /></a></span>
+    <span class="slide hidden"><a href="../projects/coffee-roasting/gallery11.jpg" class="gallery-link"><img src="../projects/coffee-roasting/gallery11.jpg" alt="Caption." /></a></span>
+    <span class="slide hidden"><a href="../projects/coffee-roasting/gallery12.jpg" class="gallery-link"><img src="../projects/coffee-roasting/gallery12.jpg" alt="Caption." /></a></span>
+    <span class="slide hidden"><a href="../projects/coffee-roasting/gallery13.jpg" class="gallery-link"><img src="../projects/coffee-roasting/gallery13.jpg" alt="Caption." /></a></span>
 </article>
 
 <hr />
